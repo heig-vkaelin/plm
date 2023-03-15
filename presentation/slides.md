@@ -25,9 +25,7 @@ transition: slide-left
 css: unocss
 ---
 
-# Welcome to Slidev
-
-Presentation slides for developers
+# Elixir
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -50,360 +48,209 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-transition: fade-out
+layout: two-cols
 ---
 
-# What is Slidev?
+# Sommaire
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
+<!-- Slidev is a slides maker and presenter designed for developers, consist of the following features -->
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+- Historique
+- Erlang
+- Utilisation
+- Avantages
+- Fonctionnalités
+- Particularités
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
+::right::
 
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-transition: slide-up
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<div class="flex flex-col items-end">
+  <img src="/elixir.png" class="w-80 mt-24"/>
+</div>
 
 ---
 layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+image: /jose-valim.jpg
 ---
 
-# Code
 
-Use code snippets and get the highlighting directly![^1]
+# Historique
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
+<!-- Slidev is a slides maker and presenter designed for developers, consist of the following features -->
+<br>
 
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
+- Créé par José Valim en 2012
+- Acteur majeu de l'eco-système Ruby et Ruby on Rails
 
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+<br>
+<br>
 
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
+- Son souhait pour Elixir : 
+  - Aussi accessible que Ruby
+  - Avec de meilleures performances et une résilience à toute épreuve
+<br>
+<br>
 
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
+<!-- 
+Brésilien, core contributeur Ruby on Rails
+
+Choix de la machine virtuelle Erland pour justement avoir une super résilience
+ -->
+
+
+---
+layout: two-cols
+---
+
+# Machine virtuelle Erlang
+
+<br>
+
+- Elixir est créé sur la VM Erlang "BEAM"
+- Développée dans les années 80 par Ericsson
+- Afin de gérer les infrastructures téléphoniques grandissantes
+
+<br>
+
+- Besoins principaux:
+  - Haute concurrence
+  - Bonne scalabilité
+
+::right::
+
+<img src="/erlang.png" class="absolute right-0 w-64"/>
+
+<!-- Utilisé par WhatsApp pour gérer 450 millions d'users avec seulement 32 ingénieurs  -->
+
+---
+layout: two-cols
+---
+
+# Utilisation
+
+Statistiques basées sur les réponses du sondage de Stack Overflow 2022 (~72k réponses)
+
+<br>
+
+Encore peu connu et peu utilisé (**2.15%**)
+
+<br>
+
+Mais très apprécié par ceux qui en font.
+
+<br>
+
+Fait partie des langages les mieux payés.
+
+::right::
+
+<div class="space-y-2 flex flex-col items-end">
+  <img src="/elixir-known.png" class="w-35"/>
+  <img src="/elixir-loved.png" class="w-96"/>
+  <img src="/elixir-paid.png" class="w-78"/>
+  <img src="/elixir-framework-paid.png" class="w-88"/>
+</div>
+
+<!-- Sûrement bien payé car systèmes critiques et peu de devs compétents disponibles -->
 
 ---
 
-# Components
+# Avantages
 
-<div grid="~ cols-2 gap-4">
-<div>
+<br>
 
-You can use Vue components directly inside your slides.
+- **Concurrence** - gérer les tâches simultanées de manière efficace, grâce à son modèle de concurrence basé sur des processus légers.
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+- **Productivité** - syntaxe claire et concise, qui facilite la lecture et l'écriture du code (inspirée de Ruby et de Python notamment).
 
-```html
-<Counter :count="10" />
-```
+- **Robustesse** - Elixir est conçu pour être résilient et tolérant aux pannes. Les applications Elixir sont conçues pour continuer à fonctionner même en cas d'échec d'un processus ou d'une machine.
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+- **Performance** - conçu pour être hautement performant, grâce à sa capacité à gérer les tâches simultanées et à sa compilation en bytecode Erlang.
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
+<!-- 
+Voici une liste non exhaustive des avantages principaux d’Elixir:
 
-</div>
-<div>
+1. Concurrence: Elixir est conçu pour gérer les tâches simultanées de manière efficace, grâce à son modèle de concurrence basé sur des processus légers.
+2. Productivité: Elixir offre une syntaxe claire et concise, qui facilite la lecture et l'écriture du code, comme expliqué précédemment inspirée de Ruby et de Python notamment.
+3. Robustesse: Elixir est conçu pour être résilient et tolérant aux pannes. Les applications Elixir sont conçues pour continuer à fonctionner même en cas d'échec d'un processus ou d'une machine. Elixir offre donc une faible latence et une haute disponibilité pour les systèmes en temps réels.
+4. Performance: Elixir est conçu pour être hautement performant, grâce à sa capacité à gérer les tâches simultanées et à sa compilation en bytecode Erlang.
 
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
+Pour résumer, Elixir est un langage de programmation puissant et polyvalent, qui offre une productivité élevée, une robustesse et des performances élevées pour les applications distribuées et en temps réel.
 -->
 
-
----
-class: px-20
 ---
 
-# Themes
+# Fonctionnalités (1)
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+### Dynamiquement typé...
 
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
+```elixir
+iex> x = 1
+1
+iex> i x
+Term
+  1
+Data type
+  Integer
+Reference modules
+  Integer
+Implemented protocols
+  IEx.Info, Inspect, List.Chars, String.Chars
 ```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
 
 <br>
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+### mais fortement typé !
 
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
+```elixir
+iex> 1 + "2"
+(ArithmeticError) bad argument in arithmetic expression: 1 + "2"
 ```
 
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
+---
+
+# Fonctionnalités (2)
+
+Langage Fonctionnel
+
+### TOUTES les données sont immutables
+
+```elixir
+iex> x = 1
+1
+iex> x = 2
+2
+iex> x
+2
 ```
 
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
+Nous n'avons pas changé la valeur de la variable x, nous avons réassigné le label x à une nouvelle valeur.
 
 
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
+### Pas de "vraies" boucles
 
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
+```elixir
+iex> Enum.each(1..3, fn x -> IO.puts(x) end)
+1
+2
+3
+:ok
 ```
 
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-src: ./pages/multiple-entries.md
-hide: false
 ---
 
----
-layout: center
-class: text-center
----
+# Fonctionnalités (3)
 
-# Learn More
+### Pattern matching
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+L'opérateur **=** réalise derrière les décors un pattern matching.
+
+```elixir
+iex> [a, b] = [1, 2]
+[1, 2]
+iex> a
+1
+iex> b
+2
+```
