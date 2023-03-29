@@ -214,7 +214,7 @@ iex> 1 + "2"
 
 Langage Fonctionnel
 
-### TOUTES les données sont immutables
+### TOUTES les données sont immuables
 
 ```elixir
 iex> x = 1
