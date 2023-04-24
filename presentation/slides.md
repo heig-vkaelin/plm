@@ -3,7 +3,7 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
+background: https://images.unsplash.com/photo-1660165459699-a866c0386a39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80
 # apply any windi css classes to the current slide
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
@@ -29,19 +29,12 @@ css: unocss
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
+    Présentation cours PLM <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
+<div class="abs-br m-6 mb-2">03.05.2023</div>
+<div class="abs-bl m-6 mb-2">Valentin Kaelin</div>
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
@@ -57,11 +50,13 @@ layout: two-cols
 <br>
 
 - Historique
+- Justification du langage
+- Avantages
 - Erlang
 - Utilisation
-- Avantages
-- Fonctionnalités
+- Concepts
 - Particularités
+- Projet
 
 ::right::
 
@@ -98,6 +93,42 @@ Brésilien, core contributeur Ruby on Rails
 Choix de la machine virtuelle Erland pour justement avoir une super résilience
  -->
 
+---
+
+
+# Justification du langage
+
+
+<div class="text-2xl flex flex-col items-end justify-center h-full -mt-12">
+« What kind of business could I build if what before took a hundred servers could today take two servers? I think that’s enabling a lot of innovation. »
+  <span class="mt-12 text-xl">Chris McCord, créateur du framework Phoenix</span>
+</div>
+
+
+---
+
+# Avantages
+
+<br>
+
+- **Concurrence** - gérer les tâches simultanées de manière efficace, grâce à son modèle de concurrence basé sur des processus légers.
+
+- **Productivité** - syntaxe claire et concise, qui facilite la lecture et l'écriture du code (inspirée de Ruby et de Python notamment).
+
+- **Robustesse** - Elixir est conçu pour être résilient et tolérant aux pannes. Les applications Elixir sont conçues pour continuer à fonctionner même en cas d'échec d'un processus ou d'une machine.
+
+- **Performance** - conçu pour être hautement performant, grâce à sa capacité à gérer les tâches simultanées et à sa compilation en bytecode Erlang.
+
+<!-- 
+Voici une liste non exhaustive des avantages principaux d’Elixir:
+
+1. Concurrence: Elixir est conçu pour gérer les tâches simultanées de manière efficace, grâce à son modèle de concurrence basé sur des processus légers.
+2. Productivité: Elixir offre une syntaxe claire et concise, qui facilite la lecture et l'écriture du code, comme expliqué précédemment inspirée de Ruby et de Python notamment.
+3. Robustesse: Elixir est conçu pour être résilient et tolérant aux pannes. Les applications Elixir sont conçues pour continuer à fonctionner même en cas d'échec d'un processus ou d'une machine. Elixir offre donc une faible latence et une haute disponibilité pour les systèmes en temps réels.
+4. Performance: Elixir est conçu pour être hautement performant, grâce à sa capacité à gérer les tâches simultanées et à sa compilation en bytecode Erlang.
+
+Pour résumer, Elixir est un langage de programmation puissant et polyvalent, qui offre une productivité élevée, une robustesse et des performances élevées pour les applications distribuées et en temps réel.
+-->
 
 ---
 layout: two-cols
@@ -122,6 +153,14 @@ layout: two-cols
 <img src="/erlang.png" class="absolute right-0 w-64"/>
 
 <!-- Utilisé par WhatsApp pour gérer 450 millions d'users avec seulement 32 ingénieurs  -->
+
+---
+
+# Pourquoi ne pas utiliser Erlang directement ?
+
+<img src="/erlang-vs-elixir.png"/>
+
+Source: [elixirforum.com](https://elixirforum.com/t/code-snippets-to-compare-erlang-and-elixir-syntax/16443/2)
 
 ---
 layout: two-cols
@@ -153,35 +192,9 @@ Fait partie des langages les mieux payés.
 </div>
 
 <!-- Sûrement bien payé car systèmes critiques et peu de devs compétents disponibles -->
-
 ---
 
-# Avantages
-
-<br>
-
-- **Concurrence** - gérer les tâches simultanées de manière efficace, grâce à son modèle de concurrence basé sur des processus légers.
-
-- **Productivité** - syntaxe claire et concise, qui facilite la lecture et l'écriture du code (inspirée de Ruby et de Python notamment).
-
-- **Robustesse** - Elixir est conçu pour être résilient et tolérant aux pannes. Les applications Elixir sont conçues pour continuer à fonctionner même en cas d'échec d'un processus ou d'une machine.
-
-- **Performance** - conçu pour être hautement performant, grâce à sa capacité à gérer les tâches simultanées et à sa compilation en bytecode Erlang.
-
-<!-- 
-Voici une liste non exhaustive des avantages principaux d’Elixir:
-
-1. Concurrence: Elixir est conçu pour gérer les tâches simultanées de manière efficace, grâce à son modèle de concurrence basé sur des processus légers.
-2. Productivité: Elixir offre une syntaxe claire et concise, qui facilite la lecture et l'écriture du code, comme expliqué précédemment inspirée de Ruby et de Python notamment.
-3. Robustesse: Elixir est conçu pour être résilient et tolérant aux pannes. Les applications Elixir sont conçues pour continuer à fonctionner même en cas d'échec d'un processus ou d'une machine. Elixir offre donc une faible latence et une haute disponibilité pour les systèmes en temps réels.
-4. Performance: Elixir est conçu pour être hautement performant, grâce à sa capacité à gérer les tâches simultanées et à sa compilation en bytecode Erlang.
-
-Pour résumer, Elixir est un langage de programmation puissant et polyvalent, qui offre une productivité élevée, une robustesse et des performances élevées pour les applications distribuées et en temps réel.
--->
-
----
-
-# Fonctionnalités (1)
+# Concepts (1)
 
 ### Dynamiquement typé...
 
@@ -210,7 +223,7 @@ iex> 1 + "2"
 
 ---
 
-# Fonctionnalités (2)
+# Concepts (2)
 
 Langage Fonctionnel
 
@@ -240,7 +253,107 @@ iex> Enum.each(1..3, fn x -> IO.puts(x) end)
 
 ---
 
-# Fonctionnalités (3)
+# Concepts (3)
+
+### Process
+
+Bien plus légers que des threads.
+
+<div class="flex justify-between">
+<div>
+```elixir
+defmodule Counter do
+  use Agent
+
+  def start_link(initial_value) do
+    Agent.start_link(fn -> initial_value end, name: __MODULE__)
+  end
+
+  def value do
+    Agent.get(__MODULE__, fn x -> x end)
+  end
+
+  def increment do
+    Agent.update(__MODULE__, fn x -> x + 1 end)
+  end
+end
+```
+</div>
+<div>
+```elixir
+iex(1)> Counter.start_link(0)
+{:ok, #PID<0.114.0>}
+
+iex(2)> Counter.value()
+0
+
+iex(3)> Counter.increment()
+:ok
+
+iex(4)> Counter.increment()
+:ok
+
+iex(5)> Counter.value()
+2
+```
+</div>
+</div>
+
+---
+
+# Concepts (4)
+### Fail fast / let it crash
+
+Process indépendants, qui se relancent automatiquement en cas d'erreur.
+
+```elixir
+iex> File.read("hello")
+{:error, :enoent}
+
+iex> File.write("hello", "world")
+:ok
+
+iex> File.read("hello")
+{:ok, "world"}
+
+# Ex avec pattern matching:
+iex> case File.read("hello") do
+...>   {:ok, body} -> IO.puts("Success: #{body}")
+...>   {:error, reason} -> IO.puts("Error: #{reason}")
+...> end
+```
+
+---
+
+# Particularités (1)
+
+### Documentation
+
+Documentation traitée comme « first-class citizen » 
+
+```elixir
+iex(1)> h trunc
+                               def trunc(number)                                
+  @spec trunc(number()) :: integer()
+
+guard: true
+Returns the integer part of number.
+Allowed in guard tests. Inlined by the compiler.
+
+## Examples
+    iex> trunc(5.4)
+    5
+    
+    iex> trunc(-5.99)
+    -5
+    
+    iex> trunc(-5)
+    -5
+```
+
+---
+
+# Particularités (2)
 
 ### Pattern matching
 
@@ -254,3 +367,23 @@ iex> a
 iex> b
 2
 ```
+
+---
+
+# Particularités (3)
+
+### Compatibilité avec Erlang
+
+Modules Erlang sont directement disponibles dans le code Elixir.
+
+```elixir
+iex> Base.encode16(:crypto.hash(:sha256, "Elixir"))
+
+"3315715A7A3AD57428298676C5AE465DADA38D951BDFAC9348A8A31E9C7401CB"
+```
+
+---
+
+# Présentation projet
+
+Canvas de dessin collaboratif en temps réel.
