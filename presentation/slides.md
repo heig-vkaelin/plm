@@ -12,10 +12,8 @@ highlighter: shiki
 lineNumbers: false
 # some information about the slides, markdown enabled
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+  ## PLM - Elixir
+  Presentation du langage Elixir
 # persist drawings in exports and build
 drawings:
   persist: false
@@ -76,7 +74,7 @@ image: /jose-valim.jpg
 <br>
 
 - Créé par José Valim en 2012
-- Acteur majeu de l'eco-système Ruby et Ruby on Rails
+- Acteur majeur de l'eco-système Ruby et Ruby on Rails
 
 <br>
 <br>
@@ -383,7 +381,22 @@ iex> Base.encode16(:crypto.hash(:sha256, "Elixir"))
 ```
 
 ---
+layout: two-cols
+---
 
 # Présentation projet
 
+
 Canvas de dessin collaboratif en temps réel.
+
+<Transform :scale="1" class="mt-20 pr-4">
+
+- Canvas partagé 
+- Syncronisation à chaque point et pas à chaque fin de trait
+
+</Transform>
+
+::right::
+
+<img src="/project-example.png" class="w-105"/>
+
