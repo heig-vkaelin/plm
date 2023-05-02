@@ -168,17 +168,16 @@ layout: two-cols
 
 Statistiques basées sur les réponses du sondage de Stack Overflow 2022 (~72k réponses)
 
-<br>
-
 Encore peu connu et peu utilisé (**2.15%**)
-
-<br>
 
 Mais très apprécié par ceux qui en font.
 
-<br>
-
 Fait partie des langages les mieux payés.
+
+<div class="space-y-2 flex flex-col items-start">
+  <img src="/repo-elixir.png" class="w-96"/>
+  <img src="/repo-phoenix.png" class="w-96"/>
+</div>
 
 ::right::
 
@@ -360,10 +359,20 @@ L'opérateur **=** réalise derrière les décors un pattern matching.
 ```elixir
 iex> [a, b] = [1, 2]
 [1, 2]
+
 iex> a
 1
+
 iex> b
 2
+```
+
+```elixir
+iex> x = 1
+1
+
+iex> x
+1
 ```
 
 ---
@@ -372,7 +381,9 @@ iex> b
 
 ### Compatibilité avec Erlang
 
-Modules Erlang sont directement disponibles dans le code Elixir.
+<br>
+
+Les modules Erlang sont directement disponibles dans le code Elixir.
 
 ```elixir
 iex> Base.encode16(:crypto.hash(:sha256, "Elixir"))
@@ -392,7 +403,8 @@ Canvas de dessin collaboratif en temps réel.
 <Transform :scale="1" class="mt-20 pr-4">
 
 - Canvas partagé 
-- Syncronisation à chaque point et pas à chaque fin de trait
+- Synchronisation à chaque point et pas à chaque fin de trait
+- Tests de montée en charge
 
 </Transform>
 
