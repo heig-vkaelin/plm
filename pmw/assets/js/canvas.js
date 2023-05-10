@@ -1,11 +1,8 @@
-//socket init
+import Konva from "konva";
 import { Socket } from "phoenix";
 
-let canvas = document.getElementById("canvas"),
-  ctx = canvas.getContext("2d"),
-  currentLine = [];
-
-let socket = new Socket("/socket", {
+// SOCKET
+const socket = new Socket("/socket", {
   params: {
     token: window.userToken,
   },
@@ -13,8 +10,7 @@ let socket = new Socket("/socket", {
 
 socket.connect();
 
-// Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("canvas:lines", {});
+const channel = socket.channel("canvas:points", {});
 channel
   .join()
   .receive("ok", (resp) => {
@@ -24,68 +20,82 @@ channel
     console.log("Unable to join", resp);
   });
 
-channel.on("recv_lines", recvLines);
+channel.on("new_point", (payload) => {
+  console.log("new point", payload);
+  const { point, id } = payload;
+  addPoint(point.x, point.y);
+  // layer.batchDraw();
+  console.log(lastLine);
+});
 
-function sendLines(lines) {
-  channel.push("new_lines", lines);
-  console.log("sending", lines);
-}
-function renderLine(line) {
-  if (line.length < 0) return;
-  let first = line[0];
-  ctx.moveTo(first.x, first.y);
-  line.forEach((point) => {
-    ctx.lineTo(point.x, point.y);
-    ctx.stroke();
+channel.on("first_point", (payload) => {
+  console.log("first point", payload);
+  const { point, id } = payload;
+  newLine(point);
+  layer.add(lastLine);
+  // layer.batchDraw();
+  console.log(lastLine);
+});
+// END SOCKET
+
+const width = window.innerWidth;
+const height = window.innerHeight - 25;
+
+// first we need Konva core things: stage and layer
+const stage = new Konva.Stage({
+  container: "container",
+  width: width,
+  height: height,
+});
+
+const layer = new Konva.Layer();
+stage.add(layer);
+
+let isPaint = false;
+let mode = "brush";
+let lastLine;
+
+stage.on("mousedown touchstart", (e) => {
+  isPaint = true;
+  const pos = stage.getPointerPosition();
+  newLine(pos);
+  channel.push("first_point", { x: pos.x, y: pos.y });
+  layer.add(lastLine);
+});
+
+stage.on("mouseup touchend", () => {
+  isPaint = false;
+});
+
+function newLine(initialPos) {
+  lastLine = new Konva.Line({
+    stroke: "#df4b26",
+    strokeWidth: 5,
+    globalCompositeOperation:
+      mode === "brush" ? "source-over" : "destination-out",
+    // round cap for smoother lines
+    lineCap: "round",
+    lineJoin: "round",
+    // add point twice, so we have some drawings even on a simple click
+    points: [initialPos.x, initialPos.y, initialPos.x, initialPos.y],
   });
 }
-function recvLines(payload) {
-  let lines = payload.lines;
-  console.log("receiving lines", lines);
-  lines.forEach(renderLine);
-}
-//end of socket init
 
-// setup
-canvas.width = 1000;
-canvas.height = 1000;
-ctx.lineWidth = 5;
-ctx.lineJoin = "round";
-ctx.lineCap = "round";
-ctx.strokeStyle = "rgba(0, 116, 217, 0.7)";
-//ctx.strokeStyle = '#0074D9';
-
-// start drawing line
-function startLine(e) {
-  console.log("start line");
-
-  canvas.addEventListener("mousemove", drawLine, false);
-
-  var point = pointForEvent(e);
-  ctx.beginPath();
-  ctx.moveTo(point.x, point.y);
-  currentLine = [];
+function addPoint(x, y) {
+  const newPoints = lastLine.points().concat([x, y]);
+  lastLine.points(newPoints);
 }
 
-function endLine(e) {
-  canvas.removeEventListener("mousemove", drawLine, false);
-  sendLines([currentLine]);
-}
+// and core function - drawing
+stage.on("mousemove touchmove", (e) => {
+  if (!isPaint) {
+    return;
+  }
 
-// draws line to this x, y coordinate
-function drawLine(e) {
-  var point = pointForEvent(e);
-  ctx.lineTo(point.x, point.y);
-  ctx.stroke();
-  currentLine.push(point);
-}
+  // prevent scrolling on touch devices
+  e.evt.preventDefault();
 
-function pointForEvent(e) {
-  return {
-    x: e.pageX - canvas.offsetLeft,
-    y: e.pageY - canvas.offsetTop,
-  };
-}
-
-canvas.addEventListener("mousedown", startLine, false);
-canvas.addEventListener("mouseup", endLine, false);
+  const pos = stage.getPointerPosition();
+  addPoint(pos.x, pos.y, true);
+  channel.push("new_point", { point: { x: pos.x, y: pos.y }, id: "42" });
+});

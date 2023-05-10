@@ -1,16 +1,27 @@
 defmodule PmwWeb.CanvasChannel do
   use PmwWeb, :channel
+  require Logger
 
   @impl true
-  def join("canvas:lines", _payload, socket) do
+  def join("canvas:points", _payload, socket) do
     {:ok, socket}
   end
 
   # Channels can be used in a request/response fashion
   # by sending replies to requests from the client
   @impl true
-  def handle_in("new_lines", payload, socket) do
-    broadcast_from(socket, "recv_lines", %{lines: payload})
+  def handle_in("first_point", payload, socket) do
+    uuid = UUID.uuid4()
+    broadcast_from(socket, "first_point", %{point: payload, id: uuid})
+    {:reply, {:ok, %{}}, socket}
+  end
+
+  # Channels can be used in a request/response fashion
+  # by sending replies to requests from the client
+  @impl true
+  def handle_in("new_point", payload, socket) do
+    broadcast_from(socket, "new_point", payload)
+
     {:reply, {:ok, %{}}, socket}
   end
 
