@@ -1,6 +1,24 @@
 import Konva from "konva";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { Socket } from "phoenix";
+
+// COLORS
+const colorButton = document.querySelector("#choose-color");
+const colorStroke = document.querySelector("#color-stroke");
+const colorsContainer = document.querySelector("#colors");
+const colors = document.querySelectorAll(".color");
+
+colorButton.addEventListener("click", () => {
+  colorsContainer.classList.toggle("hidden");
+});
+
+colors.forEach((color) => {
+  color.addEventListener("click", () => {
+    currentColor = color.dataset.color;
+    colorStroke.style.stroke = currentColor;
+    colorsContainer.classList.add("hidden");
+  });
+});
 
 // SOCKET
 const socket = new Socket("/socket", {
@@ -29,16 +47,15 @@ channel.on("new_point", (payload) => {
 
 channel.on("first_point", (payload) => {
   console.log("first point", payload);
-  const { point, id } = payload;
-  lines.set(id, newLine(point));
+  const { point, id, color } = payload;
+  lines.set(id, newLine(point, color));
   layer.add(lines.get(id));
 });
-// END SOCKET
 
+// KONVA
 const width = window.innerWidth;
-const height = window.innerHeight - 25;
+const height = window.innerHeight;
 
-// first we need Konva core things: stage and layer
 const stage = new Konva.Stage({
   container: "container",
   width: width,
@@ -52,6 +69,7 @@ const lines = new Map();
 let isPaint = false;
 let mode = "brush";
 let currentId;
+let currentColor = "#FFFFFF";
 
 stage.on("mousedown touchstart", (e) => {
   isPaint = true;
@@ -59,8 +77,8 @@ stage.on("mousedown touchstart", (e) => {
   const point = { x: pos.x, y: pos.y };
   const id = uuidv4();
   currentId = id;
-  lines.set(id, newLine(point));
-  const payload = { point, id };
+  lines.set(id, newLine(point, currentColor));
+  const payload = { point, id, color: currentColor };
   channel.push("first_point", payload);
   layer.add(lines.get(id));
 });
@@ -69,9 +87,9 @@ stage.on("mouseup touchend", () => {
   isPaint = false;
 });
 
-function newLine(initialPos) {
+function newLine(initialPos, color) {
   return new Konva.Line({
-    stroke: "#df4b26",
+    stroke: color,
     strokeWidth: 5,
     globalCompositeOperation:
       mode === "brush" ? "source-over" : "destination-out",
@@ -89,7 +107,6 @@ function addPoint(x, y, id) {
   lastLine.points(newPoints);
 }
 
-// and core function - drawing
 stage.on("mousemove touchmove", (e) => {
   if (!isPaint) {
     return;

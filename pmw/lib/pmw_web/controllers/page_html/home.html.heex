@@ -1,3 +1,37 @@
-<%# <canvas id="canvas" class="bg-white"></canvas> %>
+<div class="fixed bottom-0 left-0 ml-3 mb-3 z-50 space-y-2">
+  <div id="colors" class="hidden bg-gray-700 border border-gray-500 rounded-md grid grid-cols-4">
+    <%= for color <- @colors do %>
+      <button
+        data-color={color}
+        class="color w-11 h-11 flex items-center justify-center hover:bg-gray-600 rounded-md"
+      >
+        <div class="h-5 w-5 rounded-full" style={"background-color: #{color}"}></div>
+      </button>
+    <% end %>
+  </div>
+  <button
+    id="choose-color"
+    class="bg-gray-700 border border-gray-500 hover:bg-gray-600 text-white rounded-md h-16 w-16 flex items-center justify-center"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 19 19"
+      fill="none"
+      width="32"
+      height="32"
+      color="#FFFFFF"
+    >
+      <path
+        id="color-stroke"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.856"
+        d="M6.482 1.27c0 1.095 5.97-.976 5.97 0C12.452 3.583 1 6.02 1 8.58c0 3.045 16.813-2.56 16.813 0 0 2.924-13.402 4.872-13.402 7.43 0 1.706 9.868-1.826 9.868 0"
+      >
+      </path>
+    </svg>
+  </button>
+</div>
 
 <div id="container"></div>
