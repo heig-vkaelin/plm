@@ -11,8 +11,7 @@ defmodule PmwWeb.CanvasChannel do
   # by sending replies to requests from the client
   @impl true
   def handle_in("first_point", payload, socket) do
-    uuid = UUID.uuid4()
-    broadcast_from(socket, "first_point", %{point: payload, id: uuid})
+    broadcast_from(socket, "first_point", payload)
     {:reply, {:ok, %{}}, socket}
   end
 
