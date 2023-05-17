@@ -15,9 +15,10 @@ defmodule Pmw.Application do
       # Start Finch
       {Finch, name: Pmw.Finch},
       # Start the Endpoint (http/https)
-      PmwWeb.Endpoint
+      PmwWeb.Endpoint,
       # Start a worker by calling: Pmw.Worker.start_link(arg)
       # {Pmw.Worker, arg}
+      Canvas
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

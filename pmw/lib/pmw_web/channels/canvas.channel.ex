@@ -4,7 +4,8 @@ defmodule PmwWeb.CanvasChannel do
 
   @impl true
   def join("canvas:points", _payload, socket) do
-    {:ok, socket}
+    state = Canvas.getAll()
+    {:ok, state, socket}
   end
 
   # Channels can be used in a request/response fashion
@@ -12,6 +13,8 @@ defmodule PmwWeb.CanvasChannel do
   @impl true
   def handle_in("first_point", payload, socket) do
     broadcast_from(socket, "first_point", payload)
+    Canvas.add_initial(payload["id"], payload["point"], payload["color"])
+
     {:reply, {:ok, %{}}, socket}
   end
 
@@ -20,6 +23,7 @@ defmodule PmwWeb.CanvasChannel do
   @impl true
   def handle_in("new_point", payload, socket) do
     broadcast_from(socket, "new_point", payload)
+    Canvas.add(payload["id"], payload["point"])
 
     {:reply, {:ok, %{}}, socket}
   end
