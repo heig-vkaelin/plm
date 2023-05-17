@@ -32,8 +32,16 @@ socket.connect();
 const channel = socket.channel("canvas:points", {});
 channel
   .join()
-  .receive("ok", (resp) => {
-    console.log("Joined successfully", resp);
+  .receive("ok", (state) => {
+    console.log(`Joined successfully with ${Object.keys(state).length} lines`);
+
+    for (const [id, positions] of Object.entries(state)) {
+      if (id.endsWith("-color")) continue;
+      const color = state[`${id}-color`];
+      const points = positions.map((pos) => [pos.x, pos.y]).flat();
+      lines.set(id, newLine(points, color));
+      layer.add(lines.get(id));
+    }
   })
   .receive("error", (resp) => {
     console.log("Unable to join", resp);
@@ -87,7 +95,11 @@ stage.on("mouseup touchend", () => {
   isPaint = false;
 });
 
-function newLine(initialPos, color) {
+function newLine(points, color) {
+  const positions =
+    points.length && points.length > 1
+      ? points
+      : [points.x, points.y, points.x, points.y];
   return new Konva.Line({
     stroke: color,
     strokeWidth: 5,
@@ -96,8 +108,7 @@ function newLine(initialPos, color) {
     // round cap for smoother lines
     lineCap: "round",
     lineJoin: "round",
-    // add point twice, so we have some drawings even on a simple click
-    points: [initialPos.x, initialPos.y, initialPos.x, initialPos.y],
+    points: positions,
   });
 }
 
