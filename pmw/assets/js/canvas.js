@@ -1,6 +1,15 @@
-import Konva from "konva";
-import { v4 as uuidv4 } from "uuid";
+import Konva from "../vendor/konva";
 import { Socket } from "phoenix";
+
+// UUID
+function uuidv4() {
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16)
+  );
+}
 
 // COLORS
 const colorButton = document.querySelector("#choose-color");
