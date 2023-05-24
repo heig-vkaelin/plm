@@ -1,0 +1,940 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.0": 60,
+      "vusers.created": 60,
+      "browser.http_requests": 180,
+      "vusers.failed": 0,
+      "vusers.completed": 60
+    },
+    "rates": {},
+    "firstCounterAt": 1684921303371,
+    "firstHistogramAt": 1684921304047,
+    "lastCounterAt": 1684921363401,
+    "lastHistogramAt": 1684921363401,
+    "firstMetricAt": 1684921303371,
+    "lastMetricAt": 1684921363401,
+    "period": 1684921360000,
+    "summaries": {
+      "browser.page.FCP.https://pmw.fly.dev/": {
+        "min": 196.3,
+        "max": 444.1,
+        "count": 60,
+        "p50": 247.2,
+        "median": 247.2,
+        "p75": 267.8,
+        "p90": 284.3,
+        "p95": 290.1,
+        "p99": 301.9,
+        "p999": 301.9
+      },
+      "browser.page.TTFB.https://pmw.fly.dev/": {
+        "min": 128.1,
+        "max": 184,
+        "count": 60,
+        "p50": 135.7,
+        "median": 135.7,
+        "p75": 141.2,
+        "p90": 147,
+        "p95": 153,
+        "p99": 156,
+        "p999": 156
+      },
+      "browser.page.FID.https://pmw.fly.dev/": {
+        "min": 0.7,
+        "max": 1.1,
+        "count": 60,
+        "p50": 0.9,
+        "median": 0.9,
+        "p75": 0.9,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "p999": 1
+      },
+      "vusers.session_length": {
+        "min": 897.6,
+        "max": 1246.8,
+        "count": 60,
+        "p50": 982.6,
+        "median": 982.6,
+        "p75": 1002.4,
+        "p90": 1022.7,
+        "p95": 1085.9,
+        "p99": 1107.9,
+        "p999": 1107.9
+      }
+    },
+    "histograms": {
+      "browser.page.FCP.https://pmw.fly.dev/": {
+        "min": 196.3,
+        "max": 444.1,
+        "count": 60,
+        "p50": 247.2,
+        "median": 247.2,
+        "p75": 267.8,
+        "p90": 284.3,
+        "p95": 290.1,
+        "p99": 301.9,
+        "p999": 301.9
+      },
+      "browser.page.TTFB.https://pmw.fly.dev/": {
+        "min": 128.1,
+        "max": 184,
+        "count": 60,
+        "p50": 135.7,
+        "median": 135.7,
+        "p75": 141.2,
+        "p90": 147,
+        "p95": 153,
+        "p99": 156,
+        "p999": 156
+      },
+      "browser.page.FID.https://pmw.fly.dev/": {
+        "min": 0.7,
+        "max": 1.1,
+        "count": 60,
+        "p50": 0.9,
+        "median": 0.9,
+        "p75": 0.9,
+        "p90": 1,
+        "p95": 1,
+        "p99": 1,
+        "p999": 1
+      },
+      "vusers.session_length": {
+        "min": 897.6,
+        "max": 1246.8,
+        "count": 60,
+        "p50": 982.6,
+        "median": 982.6,
+        "p75": 1002.4,
+        "p90": 1022.7,
+        "p95": 1085.9,
+        "p99": 1107.9,
+        "p999": 1107.9
+      }
+    }
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.0": 7,
+        "vusers.created": 7,
+        "browser.http_requests": 21,
+        "vusers.failed": 0,
+        "vusers.completed": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1684921303371,
+      "firstHistogramAt": 1684921304047,
+      "lastCounterAt": 1684921309891,
+      "lastHistogramAt": 1684921309982,
+      "firstMetricAt": 1684921303371,
+      "lastMetricAt": 1684921309982,
+      "period": "1684921300000",
+      "summaries": {
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 209.1,
+          "max": 289.9,
+          "count": 7,
+          "p50": 267.8,
+          "median": 267.8,
+          "p75": 278.7,
+          "p90": 284.3,
+          "p95": 284.3,
+          "p99": 284.3,
+          "p999": 284.3
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 135.5,
+          "max": 184,
+          "count": 7,
+          "p50": 147,
+          "median": 147,
+          "p75": 153,
+          "p90": 156,
+          "p95": 156,
+          "p99": 156,
+          "p999": 156
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 0.9,
+          "count": 7,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 0.9,
+          "p95": 0.9,
+          "p99": 0.9,
+          "p999": 0.9
+        },
+        "vusers.session_length": {
+          "min": 932.9,
+          "max": 1099.3,
+          "count": 6,
+          "p50": 963.1,
+          "median": 963.1,
+          "p75": 982.6,
+          "p90": 982.6,
+          "p95": 982.6,
+          "p99": 982.6,
+          "p999": 982.6
+        }
+      },
+      "histograms": {
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 209.1,
+          "max": 289.9,
+          "count": 7,
+          "p50": 267.8,
+          "median": 267.8,
+          "p75": 278.7,
+          "p90": 284.3,
+          "p95": 284.3,
+          "p99": 284.3,
+          "p999": 284.3
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 135.5,
+          "max": 184,
+          "count": 7,
+          "p50": 147,
+          "median": 147,
+          "p75": 153,
+          "p90": 156,
+          "p95": 156,
+          "p99": 156,
+          "p999": 156
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 0.9,
+          "count": 7,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 0.9,
+          "p95": 0.9,
+          "p99": 0.9,
+          "p999": 0.9
+        },
+        "vusers.session_length": {
+          "min": 932.9,
+          "max": 1099.3,
+          "count": 6,
+          "p50": 963.1,
+          "median": 963.1,
+          "p75": 982.6,
+          "p90": 982.6,
+          "p95": 982.6,
+          "p99": 982.6,
+          "p999": 982.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.failed": 0,
+        "vusers.completed": 10,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.http_requests": 30
+      },
+      "rates": {},
+      "firstCounterAt": 1684921310318,
+      "firstHistogramAt": 1684921310318,
+      "lastCounterAt": 1684921319903,
+      "lastHistogramAt": 1684921319997,
+      "firstMetricAt": 1684921310318,
+      "lastMetricAt": 1684921319997,
+      "period": "1684921310000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 948.2,
+          "max": 1082.2,
+          "count": 10,
+          "p50": 963.1,
+          "median": 963.1,
+          "p75": 963.1,
+          "p90": 982.6,
+          "p95": 982.6,
+          "p99": 982.6,
+          "p999": 982.6
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 129.8,
+          "max": 141.2,
+          "count": 10,
+          "p50": 133,
+          "median": 133,
+          "p75": 135.7,
+          "p90": 138.4,
+          "p95": 138.4,
+          "p99": 138.4,
+          "p999": 138.4
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 205.9,
+          "max": 276.5,
+          "count": 10,
+          "p50": 223.7,
+          "median": 223.7,
+          "p75": 242.3,
+          "p90": 267.8,
+          "p95": 267.8,
+          "p99": 267.8,
+          "p999": 267.8
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 1.1,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 0.9,
+          "p95": 0.9,
+          "p99": 0.9,
+          "p999": 0.9
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 948.2,
+          "max": 1082.2,
+          "count": 10,
+          "p50": 963.1,
+          "median": 963.1,
+          "p75": 963.1,
+          "p90": 982.6,
+          "p95": 982.6,
+          "p99": 982.6,
+          "p999": 982.6
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 129.8,
+          "max": 141.2,
+          "count": 10,
+          "p50": 133,
+          "median": 133,
+          "p75": 135.7,
+          "p90": 138.4,
+          "p95": 138.4,
+          "p99": 138.4,
+          "p999": 138.4
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 205.9,
+          "max": 276.5,
+          "count": 10,
+          "p50": 223.7,
+          "median": 223.7,
+          "p75": 242.3,
+          "p90": 267.8,
+          "p95": 267.8,
+          "p99": 267.8,
+          "p999": 267.8
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 1.1,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 0.9,
+          "p95": 0.9,
+          "p99": 0.9,
+          "p999": 0.9
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.failed": 0,
+        "vusers.completed": 10,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.http_requests": 30
+      },
+      "rates": {},
+      "firstCounterAt": 1684921320337,
+      "firstHistogramAt": 1684921320337,
+      "lastCounterAt": 1684921329893,
+      "lastHistogramAt": 1684921329981,
+      "firstMetricAt": 1684921320337,
+      "lastMetricAt": 1684921329981,
+      "period": "1684921320000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 947.9,
+          "max": 1086.5,
+          "count": 10,
+          "p50": 982.6,
+          "median": 982.6,
+          "p75": 1002.4,
+          "p90": 1064.4,
+          "p95": 1064.4,
+          "p99": 1064.4,
+          "p999": 1064.4
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 203.4,
+          "max": 272.7,
+          "count": 10,
+          "p50": 223.7,
+          "median": 223.7,
+          "p75": 247.2,
+          "p90": 252.2,
+          "p95": 252.2,
+          "p99": 252.2,
+          "p999": 252.2
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 131.1,
+          "max": 146.7,
+          "count": 10,
+          "p50": 133,
+          "median": 133,
+          "p75": 138.4,
+          "p90": 144,
+          "p95": 144,
+          "p99": 144,
+          "p999": 144
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.7,
+          "max": 1,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "p999": 1
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 947.9,
+          "max": 1086.5,
+          "count": 10,
+          "p50": 982.6,
+          "median": 982.6,
+          "p75": 1002.4,
+          "p90": 1064.4,
+          "p95": 1064.4,
+          "p99": 1064.4,
+          "p999": 1064.4
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 203.4,
+          "max": 272.7,
+          "count": 10,
+          "p50": 223.7,
+          "median": 223.7,
+          "p75": 247.2,
+          "p90": 252.2,
+          "p95": 252.2,
+          "p99": 252.2,
+          "p999": 252.2
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 131.1,
+          "max": 146.7,
+          "count": 10,
+          "p50": 133,
+          "median": 133,
+          "p75": 138.4,
+          "p90": 144,
+          "p95": 144,
+          "p99": 144,
+          "p999": 144
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.7,
+          "max": 1,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "p999": 1
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.failed": 0,
+        "vusers.completed": 10,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.http_requests": 30
+      },
+      "rates": {},
+      "firstCounterAt": 1684921330268,
+      "firstHistogramAt": 1684921330268,
+      "lastCounterAt": 1684921339891,
+      "lastHistogramAt": 1684921339980,
+      "firstMetricAt": 1684921330268,
+      "lastMetricAt": 1684921339980,
+      "period": "1684921330000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 897.6,
+          "max": 996.9,
+          "count": 10,
+          "p50": 982.6,
+          "median": 982.6,
+          "p75": 982.6,
+          "p90": 1002.4,
+          "p95": 1002.4,
+          "p99": 1002.4,
+          "p999": 1002.4
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 198.6,
+          "max": 288.6,
+          "count": 10,
+          "p50": 252.2,
+          "median": 252.2,
+          "p75": 267.8,
+          "p90": 284.3,
+          "p95": 284.3,
+          "p99": 284.3,
+          "p999": 284.3
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 129.3,
+          "max": 153.7,
+          "count": 10,
+          "p50": 135.7,
+          "median": 135.7,
+          "p75": 138.4,
+          "p90": 144,
+          "p95": 144,
+          "p99": 144,
+          "p999": 144
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.7,
+          "max": 1,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 0.9,
+          "p95": 0.9,
+          "p99": 0.9,
+          "p999": 0.9
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 897.6,
+          "max": 996.9,
+          "count": 10,
+          "p50": 982.6,
+          "median": 982.6,
+          "p75": 982.6,
+          "p90": 1002.4,
+          "p95": 1002.4,
+          "p99": 1002.4,
+          "p999": 1002.4
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 198.6,
+          "max": 288.6,
+          "count": 10,
+          "p50": 252.2,
+          "median": 252.2,
+          "p75": 267.8,
+          "p90": 284.3,
+          "p95": 284.3,
+          "p99": 284.3,
+          "p999": 284.3
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 129.3,
+          "max": 153.7,
+          "count": 10,
+          "p50": 135.7,
+          "median": 135.7,
+          "p75": 138.4,
+          "p90": 144,
+          "p95": 144,
+          "p99": 144,
+          "p999": 144
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.7,
+          "max": 1,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 0.9,
+          "p95": 0.9,
+          "p99": 0.9,
+          "p999": 0.9
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.failed": 0,
+        "vusers.completed": 10,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.http_requests": 30
+      },
+      "rates": {},
+      "firstCounterAt": 1684921340334,
+      "firstHistogramAt": 1684921340334,
+      "lastCounterAt": 1684921349882,
+      "lastHistogramAt": 1684921349980,
+      "firstMetricAt": 1684921340334,
+      "lastMetricAt": 1684921349980,
+      "period": "1684921340000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 946.5,
+          "max": 999,
+          "count": 10,
+          "p50": 963.1,
+          "median": 963.1,
+          "p75": 982.6,
+          "p90": 1002.4,
+          "p95": 1002.4,
+          "p99": 1002.4,
+          "p999": 1002.4
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 128.1,
+          "max": 143.4,
+          "count": 10,
+          "p50": 133,
+          "median": 133,
+          "p75": 135.7,
+          "p90": 144,
+          "p95": 144,
+          "p99": 144,
+          "p999": 144
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 199.3,
+          "max": 288.4,
+          "count": 10,
+          "p50": 262.5,
+          "median": 262.5,
+          "p75": 267.8,
+          "p90": 278.7,
+          "p95": 278.7,
+          "p99": 278.7,
+          "p999": 278.7
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 0.9,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 0.9,
+          "p95": 0.9,
+          "p99": 0.9,
+          "p999": 0.9
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 946.5,
+          "max": 999,
+          "count": 10,
+          "p50": 963.1,
+          "median": 963.1,
+          "p75": 982.6,
+          "p90": 1002.4,
+          "p95": 1002.4,
+          "p99": 1002.4,
+          "p999": 1002.4
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 128.1,
+          "max": 143.4,
+          "count": 10,
+          "p50": 133,
+          "median": 133,
+          "p75": 135.7,
+          "p90": 144,
+          "p95": 144,
+          "p99": 144,
+          "p999": 144
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 199.3,
+          "max": 288.4,
+          "count": 10,
+          "p50": 262.5,
+          "median": 262.5,
+          "p75": 267.8,
+          "p90": 278.7,
+          "p95": 278.7,
+          "p99": 278.7,
+          "p999": 278.7
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 0.9,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 0.9,
+          "p90": 0.9,
+          "p95": 0.9,
+          "p99": 0.9,
+          "p999": 0.9
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.failed": 0,
+        "vusers.completed": 10,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.http_requests": 30
+      },
+      "rates": {},
+      "firstCounterAt": 1684921350351,
+      "firstHistogramAt": 1684921350351,
+      "lastCounterAt": 1684921359892,
+      "lastHistogramAt": 1684921359995,
+      "firstMetricAt": 1684921350351,
+      "lastMetricAt": 1684921359995,
+      "period": "1684921350000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 950,
+          "max": 1246.8,
+          "count": 10,
+          "p50": 982.6,
+          "median": 982.6,
+          "p75": 1002.4,
+          "p90": 1022.7,
+          "p95": 1022.7,
+          "p99": 1022.7,
+          "p999": 1022.7
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 201.2,
+          "max": 444.1,
+          "count": 10,
+          "p50": 237.5,
+          "median": 237.5,
+          "p75": 257.3,
+          "p90": 284.3,
+          "p95": 284.3,
+          "p99": 284.3,
+          "p999": 284.3
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 129.1,
+          "max": 145.3,
+          "count": 10,
+          "p50": 133,
+          "median": 133,
+          "p75": 135.7,
+          "p90": 138.4,
+          "p95": 138.4,
+          "p99": 138.4,
+          "p999": 138.4
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 1,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "p999": 1
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 950,
+          "max": 1246.8,
+          "count": 10,
+          "p50": 982.6,
+          "median": 982.6,
+          "p75": 1002.4,
+          "p90": 1022.7,
+          "p95": 1022.7,
+          "p99": 1022.7,
+          "p999": 1022.7
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 201.2,
+          "max": 444.1,
+          "count": 10,
+          "p50": 237.5,
+          "median": 237.5,
+          "p75": 257.3,
+          "p90": 284.3,
+          "p95": 284.3,
+          "p99": 284.3,
+          "p999": 284.3
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 129.1,
+          "max": 145.3,
+          "count": 10,
+          "p50": 133,
+          "median": 133,
+          "p75": 135.7,
+          "p90": 138.4,
+          "p95": 138.4,
+          "p99": 138.4,
+          "p999": 138.4
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 1,
+          "count": 10,
+          "p50": 0.9,
+          "median": 0.9,
+          "p75": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "p999": 1
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.failed": 0,
+        "vusers.completed": 4,
+        "vusers.created_by_name.0": 3,
+        "vusers.created": 3,
+        "browser.http_requests": 9
+      },
+      "rates": {},
+      "firstCounterAt": 1684921360334,
+      "firstHistogramAt": 1684921360334,
+      "lastCounterAt": 1684921363401,
+      "lastHistogramAt": 1684921363401,
+      "firstMetricAt": 1684921360334,
+      "lastMetricAt": 1684921363401,
+      "period": "1684921360000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 963.2,
+          "max": 1030.3,
+          "count": 4,
+          "p50": 1022.7,
+          "median": 1022.7,
+          "p75": 1022.7,
+          "p90": 1022.7,
+          "p95": 1022.7,
+          "p99": 1022.7,
+          "p999": 1022.7
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 196.3,
+          "max": 300.7,
+          "count": 3,
+          "p50": 257.3,
+          "median": 257.3,
+          "p75": 257.3,
+          "p90": 257.3,
+          "p95": 257.3,
+          "p99": 257.3,
+          "p999": 257.3
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 130.4,
+          "max": 148.4,
+          "count": 3,
+          "p50": 133,
+          "median": 133,
+          "p75": 133,
+          "p90": 133,
+          "p95": 133,
+          "p99": 133,
+          "p999": 133
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 0.9,
+          "count": 3,
+          "p50": 0.8,
+          "median": 0.8,
+          "p75": 0.8,
+          "p90": 0.8,
+          "p95": 0.8,
+          "p99": 0.8,
+          "p999": 0.8
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 963.2,
+          "max": 1030.3,
+          "count": 4,
+          "p50": 1022.7,
+          "median": 1022.7,
+          "p75": 1022.7,
+          "p90": 1022.7,
+          "p95": 1022.7,
+          "p99": 1022.7,
+          "p999": 1022.7
+        },
+        "browser.page.FCP.https://pmw.fly.dev/": {
+          "min": 196.3,
+          "max": 300.7,
+          "count": 3,
+          "p50": 257.3,
+          "median": 257.3,
+          "p75": 257.3,
+          "p90": 257.3,
+          "p95": 257.3,
+          "p99": 257.3,
+          "p999": 257.3
+        },
+        "browser.page.TTFB.https://pmw.fly.dev/": {
+          "min": 130.4,
+          "max": 148.4,
+          "count": 3,
+          "p50": 133,
+          "median": 133,
+          "p75": 133,
+          "p90": 133,
+          "p95": 133,
+          "p99": 133,
+          "p999": 133
+        },
+        "browser.page.FID.https://pmw.fly.dev/": {
+          "min": 0.8,
+          "max": 0.9,
+          "count": 3,
+          "p50": 0.8,
+          "median": 0.8,
+          "p75": 0.8,
+          "p90": 0.8,
+          "p95": 0.8,
+          "p99": 0.8,
+          "p999": 0.8
+        }
+      }
+    }
+  ]
+}

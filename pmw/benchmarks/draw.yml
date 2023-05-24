@@ -1,0 +1,23 @@
+config:
+  target: https://pmw.fly.dev
+  phases:
+    - duration: 60
+      arrivalRate: 2
+      maxVusers: 20
+      name: Warm up
+    # - duration: 120
+    #   arrivalRate: 5
+    #   rampTo: 50
+    #   name: Ramp up load
+    # - duration: 600
+    #   arrivalRate: 50
+    #   name: Sustained load
+
+  # Enable the Playwright engine:
+  engines:
+    playwright: {}
+  processor: "./draw.js"
+scenarios:
+  - engine: playwright
+    flowFunction: "draw"
+    flow: []
