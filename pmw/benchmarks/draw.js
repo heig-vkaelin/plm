@@ -4,6 +4,12 @@ function random(max = 100) {
   return Math.floor(Math.random() * max);
 }
 
+async function pickColor(page) {
+  await page.locator("#choose-color").click();
+  const randomColor = random(16) + 1;
+  await page.locator(`button.color:nth-child(${randomColor})`).click();
+}
+
 async function line(page) {
   await page.mouse.move(400 + random(), 400 + random());
   await page.mouse.down();
@@ -14,18 +20,11 @@ async function line(page) {
 async function draw(page) {
   await page.goto("https://pmw.fly.dev/");
 
-  // await page.locator("canvas").click({
-  //   position: {
-  //     x: 468 + random(),
-  //     y: 272 + random(),
-  //   },
-  // });
+  await pickColor(page);
 
   await line(page);
 
-  await page.locator("#choose-color").click();
-  const randomColor = random(16) + 1;
-  await page.locator(`button.color:nth-child(${randomColor})`).click();
+  await pickColor(page);
 
   await page.locator("canvas").click({
     position: {
