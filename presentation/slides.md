@@ -62,4 +62,39 @@ Canvas de dessin collaboratif en temps réel.
 
 ---
 
-# Test
+# Architecture globale
+
+- Projet Phoenix -> MVC classique
+- Canvas en temps réel -> Websocket
+
+--- 
+
+# Backend
+
+- Stocker dans Agent
+- Pub/Sub
+- Controller pour les couleurs
+
+---
+
+# Frontend
+
+- Vue avec templating pour les couleurs
+- Canvas en JS
+
+---
+
+# Déployement
+
+- Fly.io
+- Specs
+- Aussi try de déployer l'app Node (montrer screen error-deploy-pmw-node.png)
+
+--- 
+
+
+# Tests de montée en charge
+
+- Avec Artillery
+- Browser headless avec Playwright
+- Pas réussi que Websocket donc limité par machine
