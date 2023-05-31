@@ -3,8 +3,8 @@ config:
   phases:
     - duration: 60
       arrivalRate: 2
-      maxVusers: 20
-      name: Warm up
+      maxVusers: 10
+      name: 10 Users drawing
     # - duration: 120
     #   arrivalRate: 5
     #   rampTo: 50
