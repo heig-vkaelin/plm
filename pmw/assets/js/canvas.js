@@ -3,12 +3,14 @@ import { Socket } from "phoenix";
 
 // UUID
 function uuidv4() {
-  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+  const uuid = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
     (
       c ^
       (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
     ).toString(16)
   );
+
+  return Date.now() + "-" + uuid;
 }
 
 // COLORS
@@ -44,10 +46,9 @@ channel
   .receive("ok", (state) => {
     console.log(`Joined successfully with ${Object.keys(state).length} lines`);
 
-    for (const [id, positions] of Object.entries(state)) {
+    for (const [id, points] of Object.entries(state)) {
       if (id.endsWith("-color")) continue;
       const color = state[`${id}-color`];
-      const points = positions.map((pos) => [pos.x, pos.y]).flat();
       lines.set(id, newLine(points, color));
       layer.add(lines.get(id));
     }
@@ -58,13 +59,14 @@ channel
 
 channel.on("new_point", (payload) => {
   console.log("new point", payload);
-  const { point, id } = payload;
-  addPoint(point.x, point.y, id);
+  const { x, y, id } = payload;
+  addPoint(x, y, id);
 });
 
 channel.on("first_point", (payload) => {
   console.log("first point", payload);
-  const { point, id, color } = payload;
+  const { x, y, id, color } = payload;
+  const point = { x, y };
   lines.set(id, newLine(point, color));
   layer.add(lines.get(id));
 });
@@ -95,7 +97,7 @@ stage.on("mousedown touchstart", (e) => {
   const id = uuidv4();
   currentId = id;
   lines.set(id, newLine(point, currentColor));
-  const payload = { point, id, color: currentColor };
+  const payload = { x: pos.x, y: pos.y, id, color: currentColor };
   channel.push("first_point", payload);
   layer.add(lines.get(id));
 });
@@ -135,7 +137,7 @@ stage.on("mousemove touchmove", (e) => {
   // prevent scrolling on touch devices
   e.evt.preventDefault();
 
-  const pos = stage.getPointerPosition();
-  addPoint(pos.x, pos.y, currentId);
-  channel.push("new_point", { point: { x: pos.x, y: pos.y }, id: currentId });
+  const { x, y } = stage.getPointerPosition();
+  addPoint(x, y, currentId);
+  channel.push("new_point", { x, y, id: currentId });
 });

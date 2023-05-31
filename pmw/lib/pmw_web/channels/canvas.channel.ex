@@ -13,7 +13,7 @@ defmodule PmwWeb.CanvasChannel do
   @impl true
   def handle_in("first_point", payload, socket) do
     broadcast_from(socket, "first_point", payload)
-    Canvas.add_initial(payload["id"], payload["point"], payload["color"])
+    Canvas.add_initial(payload["id"], payload["x"], payload["y"], payload["color"])
 
     {:reply, {:ok, %{}}, socket}
   end
@@ -23,7 +23,7 @@ defmodule PmwWeb.CanvasChannel do
   @impl true
   def handle_in("new_point", payload, socket) do
     broadcast_from(socket, "new_point", payload)
-    Canvas.add(payload["id"], payload["point"])
+    Canvas.add(payload["id"], payload["x"], payload["y"])
 
     {:reply, {:ok, %{}}, socket}
   end

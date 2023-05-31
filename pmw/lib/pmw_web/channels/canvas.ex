@@ -9,17 +9,17 @@ defmodule Canvas do
     Agent.start_link(fn -> %{} end, name: __MODULE__)
   end
 
-  def add_initial(line_id, point, color) do
+  def add_initial(line_id, x, y, color) do
     Agent.update(__MODULE__, fn state ->
       state
-      |> Map.put(line_id, [point])
+      |> Map.put(line_id, [x, y])
       |> Map.put("#{line_id}-color", color)
     end)
   end
 
-  def add(line_id, point) do
+  def add(line_id, x, y) do
     Agent.update(__MODULE__, fn state ->
-      Map.put(state, line_id, [point | Map.get(state, line_id)])
+      Map.put(state, line_id, [x, y | Map.get(state, line_id)])
     end)
   end
 
