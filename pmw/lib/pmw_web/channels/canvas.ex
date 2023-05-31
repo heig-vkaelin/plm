@@ -1,10 +1,6 @@
 defmodule Canvas do
   use Agent
 
-  defp store_point(point) do
-    "#{point["x"]},#{point["y"]}"
-  end
-
   def start_link(_) do
     Agent.start_link(fn -> %{} end, name: __MODULE__)
   end
