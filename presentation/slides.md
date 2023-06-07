@@ -49,6 +49,7 @@ Canvas de dessin collaboratif en temps réel.
 
 <Transform :scale="1" class="mt-20 pr-4">
 
+- Projet en Elixir avec le framework web Phoenix
 - Canvas partagé 
 - Synchronisation à chaque point et pas à chaque fin de trait
 - Tests de montée en charge
@@ -284,7 +285,7 @@ layout: two-cols
 # Tests de montée en charge
 Utilisation d'Artillery
 
-### Types de tests:
+### Types de tests possibles:
 
 - Simples requêtes HTTP
 - Websocket
