@@ -1,0 +1,23 @@
+config:
+  target: https://pmw-node.netlify.app/
+  phases:
+    - duration: 60
+      arrivalRate: 2
+      maxVusers: 10
+      name: 10 Users drawing on Node
+    # - duration: 120
+    #   arrivalRate: 5
+    #   rampTo: 50
+    #   name: Ramp up load
+    # - duration: 600
+    #   arrivalRate: 50
+    #   name: Sustained load
+
+  # Enable the Playwright engine:
+  engines:
+    playwright: {}
+  processor: "./draw-node.js"
+scenarios:
+  - engine: playwright
+    flowFunction: "draw"
+    flow: []
