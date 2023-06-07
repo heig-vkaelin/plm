@@ -5,7 +5,7 @@ defmodule PmwWeb.PageController do
     '#FFFFFF',
     '#E4E4E4',
     '#888888',
-    "#A61FEB",
+    '#A61FEB',
     '#FFA7D1',
     '#E50000',
     '#E59500',

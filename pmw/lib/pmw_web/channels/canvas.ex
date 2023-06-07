@@ -29,12 +29,6 @@ defmodule Canvas do
     end)
   end
 
-  def getKeys() do
-    Agent.get(__MODULE__, fn state ->
-      Map.keys(state)
-    end)
-  end
-
   def getAll() do
     Agent.get(__MODULE__, fn state ->
       state
