@@ -300,9 +300,9 @@ Utilisation d'Artillery
 
 ::right::
 
-<img src="artillery-logo.png" class="w-40 ml-auto"/>
+<img src="/artillery-logo.png" class="w-40 ml-auto"/>
 
-<img src="cpu-stress-test.png" class="mt-4 w-70 ml-auto"/>
+<img src="/cpu-stress-test.png" class="mt-4 w-70 ml-auto"/>
 
 ---
 layout: two-cols
