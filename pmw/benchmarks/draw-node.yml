@@ -1,5 +1,5 @@
 config:
-  target: https://pmw-node.netlify.app/
+  target: https://pmw-node-front.fly.dev/
   phases:
     - duration: 60
       arrivalRate: 2

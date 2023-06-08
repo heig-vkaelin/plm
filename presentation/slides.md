@@ -366,3 +366,85 @@ draw.js
 <Youtube id="dSQnVATDOIs" width="711" height="400" />
 
 <!-- TODO: ajouter comparaisons entre résultats Elixir et Node -->
+
+
+---
+layout: two-cols
+---
+
+# Résultats (2)
+
+FCP
+
+### Elixir
+
+<img src="/fcp-elixir.png" class="w-100"/>
+
+::right::
+
+<div class="mt-22"></div>
+
+### Node
+
+<img src="/fcp-node.png" class="w-100"/>
+
+---
+layout: two-cols
+---
+
+# Résultats (3)
+
+FID
+
+### Elixir
+
+<img src="/fid-elixir.png" class="w-100"/>
+
+::right::
+
+<div class="mt-22"></div>
+
+### Node
+
+<img src="/fid-node.png" class="w-100"/>
+
+
+---
+layout: two-cols
+---
+
+# Résultats (4)
+
+TTFB
+
+### Elixir
+
+<img src="/ttfb-elixir.png" class="w-100"/>
+
+::right::
+
+<div class="mt-22"></div>
+
+### Node
+
+<img src="/ttfb-node.png" class="w-100"/>
+
+---
+layout: two-cols
+---
+
+# Résultats (5)
+
+Longeur de session
+
+### Elixir
+
+<img src="/session-length-elixir.png" class="w-100"/>
+
+::right::
+
+<div class="mt-22"></div>
+
+### Node
+
+<img src="/session-length-node.png" class="w-100"/>

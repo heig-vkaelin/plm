@@ -30,7 +30,7 @@ async function line(page) {
 }
 
 async function draw(page) {
-  await page.goto("https://pmw-node.netlify.app");
+  await page.goto("https://pmw-node-front.fly.dev");
 
   const dimensions = page.viewportSize();
   width = dimensions.width;
