@@ -1,6 +1,7 @@
 defmodule PmwWeb.PageController do
   use PmwWeb, :controller
 
+  # The colors that can be used to draw on the canvas.
   @colors [
     '#FFFFFF',
     '#E4E4E4',
