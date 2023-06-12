@@ -46,7 +46,9 @@ channel
   .receive("ok", (state) => {
     console.log(`Joined successfully with ${Object.keys(state).length} lines`);
 
-    for (const [id, points] of Object.entries(state)) {
+    const data = Object.entries(state).sort((a, b) => a[0].localeCompare(b[0]));
+
+    for (const [id, points] of data) {
       if (id.endsWith("-color")) continue;
       const color = state[`${id}-color`];
       lines.set(id, newLine(points, color));
