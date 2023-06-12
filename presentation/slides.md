@@ -374,10 +374,9 @@ layout: two-cols
 
 # Résultats (2)
 
-FCP
+FCP: First Contentful Paint
 
 ### Elixir
-
 <img src="/fcp-elixir.png" class="w-100"/>
 
 ::right::
@@ -394,7 +393,7 @@ layout: two-cols
 
 # Résultats (3)
 
-FID
+FID: First Input Delay
 
 ### Elixir
 
@@ -415,7 +414,7 @@ layout: two-cols
 
 # Résultats (4)
 
-TTFB
+TTFB: Time To First Byte
 
 ### Elixir
 
