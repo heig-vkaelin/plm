@@ -1,11 +1,11 @@
 # PMW - Cours PLM
 
-## Description
+## Description
 
-This is a Phoenix application that allows users to draw on a real time shared canvas with other users.
+This is a Phoenix application that allows users to draw on a real time shared canvas with other users.  
 The deployed version can be found at [`pmw.fly.dev`](https://pmw.fly.dev/).
 
-## Development
+## Development
 
 To start your Phoenix server:
 
